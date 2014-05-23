@@ -110,7 +110,7 @@ box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
 }
 
    .imagenC{
-   	background: url('../img/nica.jpg');
+   	
    	background-position: center;
    	background-size: 132% 100%;
       height: 170px;
@@ -478,6 +478,10 @@ ul
    font-size: 11px;
    text-align: justify;
    color: gray;
+}
+
+.boxAbout{
+  width: 10%;
 }
 
 .grad strong{

@@ -75,6 +75,10 @@
             </div>
           </div>
 
+
+
+
+
             <div class="info">
               <div class="container">
                 <div class="thumbs">
@@ -112,6 +116,11 @@
             </div>
 
           </div>
+
+
+
+
+
         </div>
       </div>
     </div>
@@ -137,21 +146,7 @@
     
     
     
-              <div class="row orgTra">
-                <p class="tbsFiltro col-md-1" >Filtrar Por:</p>
-
-
-                <a href="http://designshack.net/" class="btnFil col-md-1">Nuevos</a>
-
-
-
-                <a href="http://designshack.net/" class="btnFil col-md-1">Rating</a>
-
-
-
-                <a href="http://designshack.net/" class="btnFil col-md-1">Vistas</a>
-
-              </div>
+              
 
 
 

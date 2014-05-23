@@ -327,7 +327,7 @@ width: 75px;
 padding-left: 0;
 position: relative;
 top: 9px;
-left: 770px;
+left: 90%;
 cursor: pointer;
 }
 
@@ -788,3 +788,89 @@ width: 90%;
 .btnLoginDos{
 margin-top: 13px;
 }
+.infoMov{
+  display: none;
+}
+
+ @media (max-width: 1000px) {
+      #box{
+        display: none;
+      } 
+      .infoMov{
+        display: initial;
+      }
+      .comment{
+        width: 75%;
+        padding: 10px;
+      }
+      .infoTxt {
+position: relative;
+top: -35px;
+left: 80px;
+text-align: left;
+}
+.imagenC {
+margin-left: 0px;
+}
+.boxUser {
+color: rgb(196, 151, 151);
+
+}
+    }
+
+     @media (max-width: 400px) {
+     .cmtUser {
+position: relative;
+color: #00736a;
+font-size: 20px;
+font-family: 'Oswald';
+top: -53px;
+left: 20px;
+cursor: pointer;
+-webkit-transition: all 0.2s ease-in-out;
+-moz-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+-ms-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+      .horaComment {
+font-family: Helvetica;
+margin-left: 4px;
+color: gray;
+font-size: 10px;
+}
+    }
+
+    @media (max-width: 1000px) {
+
+.btnFav,.btnFav:hover{
+top: -95px;
+left: 80%;
+    }
+    }
+
+
+     @media (max-width: 700px) {
+ .btnComent {
+
+left: 0%;
+
+}
+.btnFav,.btnFav:hover{
+top: -95px;
+left: 80%;
+    }
+    }
+
+     @media (max-width: 500px) {
+ .btnComent {
+
+right: 0%;
+
+}
+.btnFav,.btnFav:hover{
+  
+top: -95px;
+left: 70%;
+    }
+  }

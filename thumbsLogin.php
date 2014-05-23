@@ -21,9 +21,12 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/thumbnail.css">
+  
   <link rel="stylesheet" href="css/loginmain.css">
   <link rel="stylesheet" href="css/loginthumbnail.css">
+  <link rel="stylesheet" href="css/thumbnail.css">
+
+  
 
 
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -32,7 +35,7 @@
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "a50ec646-eb0b-40e9-8900-4310cdae3bcb", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
   
-</style>
+<link rel="stylesheet" href="css/responsiveHeaderThumb.css">
 </head>
 <body class="noise">
        <!--[if lt IE 7]>
@@ -41,145 +44,129 @@
             <div class="navbar navbar-inverse navbar-fixed-top nav navig headerText" role="navigation">
               <div class="container margH">
                 <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand logo" href="indexLogin.html"><img src="img/logo.png"></a>
+                 
+                   <a class="navbar-brand searchMov" href="#"><img src="img/mobile03.png"></a>
+                    <a class="navbar-brand logoMov" href="#"><img src="img/mobile01.png"></a>
+                    <a class="navbar-brand loginMov" href="#"><img src="img/mobile02.png"></a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="buscador">
+                  <a class="navbar-brand logo" href="indexLogin.html"><img src="img/logo.png"></a>
                 <form>
-                  <input  class="searchInput"  placeholder="Etiquetas" type="text"> 
+                  <input  class="searchInput"  placeholder="" type="text"> 
                   <span class="glyphicon glyphicon-search iconSearch"></span>
                 </form>
-                 <a href="perfilLogin.html" class="imagenC veroA ">                 
-                    </a>
-                    <strong class="txtUser">Kammil Carranza</strong>
+                </div>
+                <div class="infoUser">
+                 <div class="imagenC veroA ">                 
+                    </div>
+                    <strong class="txtUser">David Bernal</strong>
                     <div class="icons">
                     <span class="glyphicon glyphicon-eye-open eyeIcon"></span>
                     <span class="glyphicon glyphicon-envelope mailIcon"></span>
                     <a href="upload.html"><span class="glyphicon glyphicon-upload UpIcon"></span></a>
                     <a href="index.html"><span class="glyphicon glyphicon-off offIcon"></span></a>
-</div>
                     
 
                 </div><!--/.navbar-collapse -->
               </div>
             </div>
+             </div>
 
 
       
 
 
+        <?php
 
 
-  <div class="container ">
-     
-
-    <div class="row margenThb">
-
-      <div class="col-xs-12 col-md-9">
-      <div class="nombreThumb">
-<p class="tituloThumb">Grem, El Vikingo</p>
-      </div>
-        <div class="image">
-          <div href="#" class="thumbnail">
-            <img src="img/vikingo.jpg" alt="...">  
-                      
-             
-         </div>     
-          </div>     
-        
-      </div>
-    </div>
-<div class="row ">
-<div class="col-md-9">
-<form class="marginPost">
-   <input  class="myComent comentario" placeholder="Escribir Comentario" type="text"> 
-   <div class="btnComent">Post</div>
-   </form>
-
-</div>  
-
-
-</div>
-
-
-<div class="row ">
-<div class="col-md-8">
-
-
- 
- 
- <a href="perfilLogin.html" class="imagenComent perfilComent">                 
-</a>
- <a href="perfilLogin.html"><strong class="cmtUser">Kammil Carranza<span class="horaComment">Hace 40 minutos </span></strong></a>
-<p class="comment">Muy buen trabajo. Se nota la dedicación por parte de la artista y su pasión por los personajes tipo cartoon, lo cual se ve reflejado en la estetica del modelo. La textura y el escenario son los detalles que enamoran. Favorito totalmente.
-.</p>
-<hr class="commentSep">
-</div>
-   
-</div>
-
-<div class="row ">
-<div class="col-md-8">
-
-
- 
- 
- <a href="perfil.html" class="imagenComent1 perfilComent">                 
-</a>
- <a href="perfil.html"><strong class="cmtUser">Julián Hernández<span class="horaComment">Hace un dia </span></strong></a>
-<p class="comment">Me gusta como usó a "Como entrenar tu dragón" de referencia para lograr lo que quería. Un muy buen trabajo, limpio y cuidadoso en hasta los detalles más pequeños. Me pregunto si habrá ganado la convocatoria o si por lo menos quedó entre los finalistas.</p>
-<hr class="commentSep">
-</div>
-   
-</div>
-
-<div class="row ">
-<div class="col-md-8">
-
-
- 
- 
- <a href="perfil.html" class="imagenComent2 perfilComent">                 
-</a>
- <a href="perfil.html"><strong class="cmtUser">Milka Ranzaca<span class="horaComment">Hace 5 días </span></strong></a>
-<p class="comment">El trabajo me ha parecido merecedor del premio de la convocatoria y además de estar entre el ranking de favoritos en esta comunidad. Es simplemente hermoso como los sueños de la artista se convirtieron en algo que tiene una estetica impresionante. Excelente trabajo.</p>
-</div>
-   
-</div>
+        $conexion =mysqli_connect("localhost","poly","poly","Poly");
+        mysqli_set_charset($conexion, "utf8");
+        $query = "SELECT * FROM post WHERE id=".$_GET['id']." LIMIT 1";
+        $resultado = mysqli_query($conexion, $query);
+        while ($fila = mysqli_fetch_array($resultado)) {
 
 
 
-</div>
 
-<div id='box'>
-  <a href="perfil.html" class="imagenC thumbsTxt">                 
-                    </a>
-                    <a href="perfil.html"><strong class="boxUser">Verónica Alegría</strong></a>
-
-                    <hr class="boxSep">
-
-                     <div class="boxAbout">Acerca:</div><br/>
-        <p class="boxTxt">Este proyecto fue desarrollado  durante 2 semanas como concursante en una convocatoria para la quinta edición del festival Magna CG realizado en Londres en el año 2013. Me basé en la película “como entrenar a tu dragón” para las vestimenta de Grem. El modelo fue hecho en 3D Max y renderizado Con los assets de V-Ray.</p>
-           <a href="#" class="btnFav "><span class="glyphicon glyphicon-star icon star"></span> Favorito </a>
-           <div class="infoTxt">
-             <div class="boxInfo">Información</div>
-             <p>Vistas: 5,241<br/>
-             Favoritos: 2,231<br/>
-             Comentarios: 3<br/>
-             </p>
-           </div>
-           <hr class="boxSep2">
-           <a href="#" class="btnContacto"></span> Contacto </a>
-
-</div>
+         echo "<div class='container' >";
+         echo "<div class='row margenThb'>";
+         echo "<div class='col-xs-12 col-md-9'>";
+         echo "<div class='nombreThumb'>";
+         echo "<p class='tituloThumb'>".$fila['nombre']."</p>";
+         echo "</div>";
+         echo "<div class='image'>";
+         echo "<div href='#'' class='thumbnail'>";
+         echo "<img src='".$fila['image']."'>" ;
+         echo "</div>";
+         echo "</div>";
+         echo "</div>";
+         echo "</div>";
 
 
-<hr>
+       }
+       mysqli_close($conexion);
+       ?>
+
+
+
+
+
+
+
+
+
+       
+
+<?php
+
+
+          $conexion =mysqli_connect("localhost","poly1","poly","Poly");
+          mysqli_set_charset($conexion, "utf8");
+          /*SELECT user.usuario
+            FROM user
+            INNER JOIN post
+            ON post.idUser=user.id
+          */
+
+          //$query = "SELECT * FROM post ";
+          $query = "SELECT * FROM user INNER JOIN post ON post.idUser=user.id  LIMIT 1"; 
+          $resultado = mysqli_query($conexion, $query);
+
+          while ($fila = mysqli_fetch_array($resultado)) {
+
+
+
+            
+         echo  "<div id='box'>";
+         echo  "<a href='perfil.html?id=".$fila['idUser']."' > "; 
+         echo "<img class='imagenC thumbsTxt' src='".$fila['imagen']."'>";            
+         echo  "</a>";
+         echo  "<a href='perfil.php?id=".$fila['idUser']."'><strong class='boxUser'>".$fila['usuario']."</strong></a>";
+         echo  "<hr class='boxSep'>";
+         echo  "<div class='boxAbout'>Acerca:</div><br/>";
+         echo  "<p class='boxTxt'>" .$fila['about']."</p>";
+
+
+         echo  "<a href='#' class='btnFav ''><span class='glyphicon glyphicon-star icon star'></span> Favorito </a>";
+         echo  "<div class='infoTxt'>";
+         echo  "<div class='boxInfo'>Información</div>";
+         echo  "<p>Vistas: 5,241<br/>";
+         echo  "Favoritos: 2,231<br/>";
+         echo  "Comentarios: 3<br/>";
+         echo  "</p>";
+         echo  "</div>";
+         echo  "<hr class='boxSep2'>";
+         echo  "<a href='#' class='btnContacto'></span> Contacto </a>";
+         echo  "</div>";
+
+         }
+         mysqli_close($conexion);
+         ?>
+
+
+
+
+
 
 <footer class="grad">
       <div class="container">

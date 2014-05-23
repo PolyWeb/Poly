@@ -1,3 +1,4 @@
+
 !--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
@@ -31,21 +32,22 @@
 
 </head>
 <body class="noise">
+
+
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
             <div class="navbar navbar-inverse navbar-fixed-top nav navig headerText" role="navigation">
               <div class="container margH">
                 <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
+                 
                   <a class="navbar-brand logo" href="index.html"><img src="img/logo.png"></a>
+                  <a class="navbar-brand searchMov" href="#"><img src="img/mobile03.png"></a>
+                    <a class="navbar-brand logoMov" href="#"><img src="img/mobile01.png"></a>
+                    <a class="navbar-brand loginMov" href="#"><img src="img/mobile02.png"></a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="">
                    <form>
                   <input  class="searchInput"  placeholder="Etiquetas" type="text"> 
                   <span class="glyphicon glyphicon-search iconSearch"></span>
@@ -79,6 +81,20 @@
 
       
 
+ <?php
+
+
+$conexion =mysqli_connect("localhost","poly","poly","Poly");
+mysqli_set_charset($conexion, "utf8");
+$query = "SELECT * FROM post WHERE id=".$_GET['id']." LIMIT 1";
+$resultado = mysqli_query($conexion, $query);
+while ($fila = mysqli_fetch_array($resultado)) {
+    
+}
+mysqli_close($conexion);
+?>
+
+
 
 
 
@@ -101,6 +117,26 @@
         
       </div>
     </div>
+    <div class="infoMov">
+      <a href="perfil.html" class="imagenC thumbsTxt">                 
+                    </a>
+                    <a href="perfil.html"><strong class="boxUser">Verónica Alegría</strong></a>
+<div class="infoTxt">
+             <p>Vistas: 5,241<br/>
+             Favoritos: 2,231<br/>
+             Comentarios: 3<br/>
+             </p>
+           </div>
+
+         <a href="#" class="btnFav "><span class="glyphicon glyphicon-star icon star"></span> Favorito </a>            
+
+                   
+        <p class="boxTxt">Este proyecto fue desarrollado  durante 2 semanas como concursante en una convocatoria para la quinta edición del festival Magna CG realizado en Londres en el año 2013. Me basé en la película “como entrenar a tu dragón” para las vestimenta de Grem. El modelo fue hecho en 3D Max y renderizado Con los assets de V-Ray.</p>
+          
+           
+    </div>
+    
+
 <div class="row ">
 <div class="col-md-9">
 <form class="marginPost">
@@ -112,53 +148,6 @@
 
 
 </div>
-
-
-<div class="row ">
-<div class="col-md-8">
-
-
- 
- 
- <a href="perfil.html" class="imagenComent perfilComent">                 
-</a>
- <a href="perfil.html"><strong class="cmtUser">Kammil Carranza<span class="horaComment">Hace 40 minutos </span></strong></a>
-<p class="comment">Muy buen trabajo. Se nota la dedicación por parte de la artista y su pasión por los personajes tipo cartoon, lo cual se ve reflejado en la estetica del modelo. La textura y el escenario son los detalles que enamoran. Favorito totalmente.
-.</p>
-<hr class="commentSep">
-</div>
-   
-</div>
-
-<div class="row ">
-<div class="col-md-8">
-
-
- 
- 
- <a href="perfil.html" class="imagenComent1 perfilComent">                 
-</a>
- <a href="perfil.html"><strong class="cmtUser">Julián Hernández<span class="horaComment">Hace un dia </span></strong></a>
-<p class="comment">Me gusta como usó a "Como entrenar tu dragón" de referencia para lograr lo que quería. Un muy buen trabajo, limpio y cuidadoso en hasta los detalles más pequeños. Me pregunto si habrá ganado la convocatoria o si por lo menos quedó entre los finalistas.</p>
-<hr class="commentSep">
-</div>
-   
-</div>
-
-<div class="row ">
-<div class="col-md-8">
-
-
- 
- 
- <a href="perfil.html" class="imagenComent2 perfilComent">                 
-</a>
- <a href="perfil.html"><strong class="cmtUser">Milka Ranzaca<span class="horaComment">Hace 5 días </span></strong></a>
-<p class="comment">El trabajo me ha parecido merecedor del premio de la convocatoria y además de estar entre el ranking de favoritos en esta comunidad. Es simplemente hermoso como los sueños de la artista se convirtieron en algo que tiene una estetica impresionante. Excelente trabajo.</p>
-</div>
-   
-</div>
-
 
 
 </div>

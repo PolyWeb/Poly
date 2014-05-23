@@ -62,7 +62,7 @@ background-position-y: 263px;
 }
 
 .navbar .imagenC{
-  background: url('../img/me.jpg');
+  background: url('../img/julian.jpg');
   background-position: center;
   background-size: 102% 102%;
    height: 70px;
@@ -754,3 +754,25 @@ width: 90%;
 .btnLoginDos{
 margin-top: 13px;
 }
+
+.navbar .imagenC{
+  margin-left: 0;
+}
+
+.icons{
+  top: 0;
+}
+
+
+ @media (max-width: 500px) {
+    
+         .navbar .imagenC{
+     height: 60px;
+ width: 60px; 
+
+ margin-top: 0px; 
+margin-left: 0%;
+top: -45px;
+left: 20%;
+      }
+      }
