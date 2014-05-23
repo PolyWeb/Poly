@@ -1,3 +1,10 @@
+
+ <?php 
+  session_start(); 
+  ?>
+
+
+
 !--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
@@ -38,6 +45,15 @@
 <link rel="stylesheet" href="css/responsiveHeaderThumb.css">
 </head>
 <body class="noise">
+
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=296699573830310&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
        <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
@@ -56,30 +72,45 @@
                   <span class="glyphicon glyphicon-search iconSearch"></span>
                 </form>
                 </div>
-                <div class="infoUser">
-                 <div class="imagenC veroA ">                 
-                    </div>
-                    <strong class="txtUser">David Bernal</strong>
-                    <div class="icons">
-                    <span class="glyphicon glyphicon-eye-open eyeIcon"></span>
-                    <span class="glyphicon glyphicon-envelope mailIcon"></span>
-                    <a href="upload.html"><span class="glyphicon glyphicon-upload UpIcon"></span></a>
-                    <a href="index.html"><span class="glyphicon glyphicon-off offIcon"></span></a>
-                    
-
-                </div><!--/.navbar-collapse -->
-              </div>
-            </div>
-             </div>
 
 
-      
+
+            <?php
+
+$conexion =mysqli_connect("localhost","root","","poly");
+mysqli_set_charset($conexion, "utf8");
+$query = "SELECT * FROM user WHERE id=".$_SESSION['id']." LIMIT 1";
+$resultado = mysqli_query($conexion, $query);
+while ($fila = mysqli_fetch_array($resultado)) {
 
 
-        <?php
+
+ echo "<div class='infoUser'>";   
+ echo "<div class='imagenC veroA'>  ";   
+
+ echo  "<a  class='imagenC veroA'  href='perfil.php?id=".$fila['id']."' > "; 
+ echo "<img class='imagenC thumbsTxt' src='".$fila['imagen']."'>";            
+ echo  "</a>";
+
+echo " </div>";
+echo"<strong class='txtUser'>".$fila['usuario']."</strong>";
+echo"  <div class='icons'>";
+echo "<span class='glyphicon glyphicon-eye-open eyeIcon'></span>";
+echo"  <span class='glyphicon glyphicon-envelope mailIcon'></span>";
+echo" <a href='upload.php'><span class='glyphicon glyphicon-upload UpIcon'></span></a>";
+echo" <a href='includes/destroy.php'><span class='glyphicon glyphicon-off offIcon'></span></a>";
+
+echo "</div>";
 
 
-        $conexion =mysqli_connect("localhost","poly","poly","Poly");
+echo " </div>";
+
+}
+
+
+
+
+$conexion =mysqli_connect("localhost","root","","poly");
         mysqli_set_charset($conexion, "utf8");
         $query = "SELECT * FROM post WHERE id=".$_GET['id']." LIMIT 1";
         $resultado = mysqli_query($conexion, $query);
@@ -120,7 +151,7 @@
 <?php
 
 
-          $conexion =mysqli_connect("localhost","poly1","poly","Poly");
+$conexion =mysqli_connect("localhost","root","","poly");
           mysqli_set_charset($conexion, "utf8");
           /*SELECT user.usuario
             FROM user
@@ -164,8 +195,8 @@
          ?>
 
 
-
-
+<div class="fb-comments" data-href="http://example.com/comments" data-numposts="5" data-colorscheme="light"></div>
+</div>
 
 
 <footer class="grad">
@@ -212,6 +243,10 @@
 
           </div>        
         </div>
+
+
+
+
       </footer>
 
 

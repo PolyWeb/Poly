@@ -56,6 +56,8 @@
 
 
 <body class="noise">
+
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
@@ -74,20 +76,42 @@
                   <span class="glyphicon glyphicon-search iconSearch"></span>
                 </form>
                 </div>
-                <div class="infoUser">
-                 <div class="imagenC veroA ">                 
-                    </div>
-                    <strong class="txtUser">David Bernal</strong>
-                    <div class="icons">
-                    <span class="glyphicon glyphicon-eye-open eyeIcon"></span>
-                    <span class="glyphicon glyphicon-envelope mailIcon"></span>
-                    <a href="upload.html"><span class="glyphicon glyphicon-upload UpIcon"></span></a>
-                    <a href="index.html"><span class="glyphicon glyphicon-off offIcon"></span></a>
 
-                </div>
-                
+<?php
 
-              </div><!--/.navbar-collapse -->
+$conexion =mysqli_connect("localhost","root","","poly");
+mysqli_set_charset($conexion, "utf8");
+$query = "SELECT * FROM user WHERE id=".$_SESSION['id']." LIMIT 1";
+$resultado = mysqli_query($conexion, $query);
+while ($fila = mysqli_fetch_array($resultado)) {
+
+
+
+ echo "<div class='infoUser'>";   
+ echo "<div class='imagenC veroA'>  ";   
+
+ echo  "<a href='perfil.php?id=".$fila['id']."' > "; 
+ echo "<img class='imagenC thumbsTxt' src='".$fila['imagen']."'>";            
+ echo  "</a>";
+
+echo " </div>";
+echo"<strong class='txtUser'>".$fila['usuario']."</strong>";
+echo"  <div class='icons'>";
+echo "<span class='glyphicon glyphicon-eye-open eyeIcon'></span>";
+echo"  <span class='glyphicon glyphicon-envelope mailIcon'></span>";
+echo" <a href='upload.php'><span class='glyphicon glyphicon-upload UpIcon'></span></a>";
+echo" <a href='includes/destroy.php'><span class='glyphicon glyphicon-off offIcon'></span></a>";
+
+echo "</div>";
+
+
+echo " </div>";
+
+}
+
+?>
+
+
             </div>
           </div>
 
@@ -160,7 +184,7 @@
           </div>
 
 
-          <div class="row margenThb">
+          <div class="margenThb">
 
 
 
@@ -168,7 +192,7 @@
          <?php
 
 
-          $conexion =mysqli_connect("localhost","poly1","poly","Poly");
+        $conexion =mysqli_connect("localhost","root","","poly");
           mysqli_set_charset($conexion, "utf8");
           /*SELECT user.usuario
             FROM user
@@ -183,7 +207,7 @@
           while ($fila = mysqli_fetch_array($resultado)) {
 
 
-             echo "<div class='row margenThb'>";
+             echo "<div class='margenThb'>";
             echo  " <div class='col-xs-12 col-md-4 imgViewer'>";
             echo  "  <div class='image'>";
             echo  "<a href='thumbsLogin.php?id=".$fila['id']."' class='thumbnail'>";
@@ -206,6 +230,10 @@
           ?>
 
 
+
+</div>
+
+</div>
 
 
 

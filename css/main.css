@@ -27,6 +27,11 @@ background: url(../img/textura-white.png);
 top: -25px;
 }
 
+.imgViewer{
+display: inline-block;
+margin-bottom: 25px;
+}
+
 .headerText{
 background: url(../img/textura-black.png),repeat;
 background-position: 131px;

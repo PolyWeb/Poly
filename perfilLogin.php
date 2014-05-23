@@ -1,8 +1,3 @@
-<?php 
-  session_start(); 
-  ?>
-
-
 !--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
@@ -27,12 +22,20 @@
 
 
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/loginmain.css">
   <link rel="stylesheet" href="css/perfil.css">
+  <link rel="stylesheet" href="css/loginperfil.css">
+
+  
+
 
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-  <script type="text/javascript">var switchTo5x=true;</script>
+
+   <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "a50ec646-eb0b-40e9-8900-4310cdae3bcb", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
+<script type="text/javascript">stLight.options({publisher: "a50ec646-eb0b-40e9-8900-4310cdae3bcb", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+  
+
 </head>
 <body class="noise">
         <!--[if lt IE 7]>
@@ -47,44 +50,41 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a href="index.html" class="navbar-brand logo" href="#"><img src="img/logo.png"></a>
+                  <a class="navbar-brand logo" href="indexLogin.html"><img src="img/logo.png"></a>
                 </div>
+
+
+
+
                 <div class="navbar-collapse collapse">
-                   <form>
-                  <input  class="searchInput"  placeholder="Buscar" type="text"> 
+                <form>
+                  <input  class="searchInput"  placeholder="Etiquetas" type="text"> 
                   <span class="glyphicon glyphicon-search iconSearch"></span>
                 </form>
-                  <div class="dropdown">
-                    <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html" class="dropdown btnLogin col-md-offset-10">Login <span class="glyphicon glyphicon-chevron-down iconLogin"></span>
-                    </a>
-
-                    
-                    <div class="dropdown-menu noise " role="menu" aria-labelledby="dLabel">
-                     <div class="lifeline noise"></div>
-                     <form class="dropPost">
-
-                     <input  class="dropInput" placeholder="Usuario" type="text"> 
-                    </form>
-                    <form class="dropPost">
-
-                      <input  class="dropInput" placeholder="Contraseña" type="password"> 
-                    </form>
-                    <div class="btnLogin btnLoginDos"> LogIn </div>
-                    <hr class="sepDrop">
-                    <p class="dropTxt"> ¿No tienes cuenta? </p>
-                    <div class="btnLogin btnLoginReg "  data-toggle="modal" data-target="#myModal"> Registrate </div>
+                 <div class="imagenC veroA ">                 
+                    </div>
+                    <strong class="txtUser">David Bernal</strong>
+                    <div class="icons">
+                    <span class="glyphicon glyphicon-eye-open eyeIcon"></span>
+                    <span class="glyphicon glyphicon-envelope mailIcon"></span>
+                     <a href="upload.html"><span class="glyphicon glyphicon-upload UpIcon"></span></a>
+                    <a href="index.html"><span class="glyphicon glyphicon-off offIcon"></span></a>
                   </div>
-                </div>
+                    
 
-              </div><!--/.navbar-collapse -->
+                </div><!--/.navbar-collapse -->
+
+
+
+
+
+              </div>
             </div>
-          </div>
 
 
 
 
-
-           <?php
+   <?php
 
 $conexion =mysqli_connect("localhost","root","","poly");
 mysqli_set_charset($conexion, "utf8");
@@ -94,55 +94,53 @@ while ($fila = mysqli_fetch_array($resultado)) {
 
 
 
- echo  "  <div class='info'>";
- echo  "    <div class='container'>";
- echo  "      <div class='thumbs'>";
- echo  "        <div class='col-md-2 fotoPerfil'>";
- echo  "          <div class='imagenC thumbsTxt'>  ";
- echo "<img class='imagenC thumbsTxt' src='".$fila['imagen']."'>"; 
+       echo  "  <div class='info'>"
+       echo  "    <div class='container'>"
+       echo  "      <div class='thumbs'>"
+       echo  "        <div class='col-md-2 fotoPerfil'>"
+       echo  "          <div class='imagenC thumbsTxt'>  "
+                echo "<img class='imagenC thumbsTxt' src='".$fila['imagen']."'>"; 
 
- echo  "          </div>";
- echo  "        </div>";
- echo  "        <div class='col-md-4 fotoPerfil'>";
- echo  "          <h2>".$fila['usuario']."</h2> <br/>";
- echo  "          <p class='perfilStats'><span class='boldStat'>5</span>Seguidores<span  class='boldStat'>73</span>Siguiendo</p>";
- echo  "          <br/> ";
-         
- echo  "        </div>";
- echo  "        <div class='col-md-5'>";
- 
- echo  "         <h3>Acerca de Mi:</h3> <br/>";
+       echo  "          </div>"
+       echo  "        </div>"
+       echo  "        <div class='col-md-4 fotoPerfil'>"
+       echo  "          <h2>".$fila['usuario']."</h2> <br/>"
+       echo  "          <p class='perfilStats'><span class='boldStat'>5</span>Seguidores<span  class='boldStat'>73</span>Siguiendo</p>"
+       echo  "          <br/> "
+       echo  "          <a href='#' class='btnInfo'><span class='glyphicon glyphicon-pencil icon pencil'></span> Editar </a> "          
+       echo  "        </div>"
+       echo  "        <div class='col-md-5'>"
+       echo  "           <a href='#' class='btnInfo'><span class='glyphicon glyphicon-pencil icon pencil'></span> Editar </a>"
+       echo  "         <h3>Acerca de Mi:</h3> <br/>"
 
- echo  "         <p class='miInfo'>".$fila['about']."</p>";
- echo  "         <div>";
-
- echo  "           <div class='findTxt linea'>";
- echo  "        <p  class='findMeTXT'>Encuentrame en:</p>";
- echo  "        <div class='findME'>";
- echo  "          <span class='st_twitter' ></span>";
- echo  "          <span class='st_facebook' ></span>";
- echo  "          <span class='st_linkedin' ></span>";
- echo  "          <span class='st_email' ></span>";
- echo  "        </div>";
- echo  "      </div>";
- echo  "      </div>";
- echo  "      </div>";        
- echo  "    </div>";
- echo  "  </div>";
-
-  
-     
-    
-}
- 
+       echo  "         <p class='miInfo'>".$fila['about']."</p>"
+       echo  "         <div>"
+          
+       echo  "           <div class='findTxt linea'>"
+       echo  "        <p  class='findMeTXT'>Encuentrame en:</p>"
+       echo  "        <div class='findME'>"
+       echo  "          <span class='st_twitter' ></span>"
+       echo  "          <span class='st_facebook' ></span>"
+       echo  "          <span class='st_linkedin' ></span>"
+       echo  "          <span class='st_email' ></span>"
+       echo  "        </div>"
+       echo  "      </div>"
+       echo  "        </div>"
+       echo  "      </div>   "          
+       echo  "    </div>"
+       echo  "  </div>"
+       echo  "</div>"
 
 
+        echo  "</div>"  
+        echo  "</div>"
+  echo  "</div>"
+    echo  "</div>"
 ?>
 
 
 
-
-
+       
 
 
 
@@ -163,14 +161,25 @@ while ($fila = mysqli_fetch_array($resultado)) {
     
     
     
-              
+              <div class="row orgTra">
+                <p class="tbsFiltro col-md-1" >Filtrar Por:</p>
+
+
+                <a href="http://designshack.net/" class="btnFil col-md-1">Nuevos</a>
 
 
 
-    <div class="row margenThb">
+                <a href="http://designshack.net/" class="btnFil col-md-1">Rating</a>
 
 
 
+                <a href="http://designshack.net/" class="btnFil col-md-1">Vistas</a>
+
+              </div>
+
+
+
+     <div class="row margenThb">
 
        <?php
 
@@ -208,9 +217,8 @@ while ($fila = mysqli_fetch_array($resultado)) {
           mysqli_close($conexion);
           ?>
 
-
+ 
 </div>
-
 
 
 </div>
@@ -223,8 +231,8 @@ while ($fila = mysqli_fetch_array($resultado)) {
           <div class="col-md-2 linksRap">
             <strong>Links Rápidos</strong>
             <ul class="footerTxt"> 
-              <li><a href="#">Página Principal</a></li>
-              <li><a href="#">Mi Perfil</a></li>
+              <li><a href="indexLogin.html">Página Principal</a></li>
+              <li><a href="perfilLogin.html">Mi Perfil</a></li>
               <li><a href="#">Tutoriales</a></li>
               <li><a href="#">Ayuda</a></li>
             </ul>

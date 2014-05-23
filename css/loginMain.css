@@ -22,11 +22,18 @@ background: url(../img/textura-white.png);
 	margin-top: 28px;	
 }
 
+.navbar-header{
+   display: none;
+}
 .logo{
    position: relative;
 top: -25px;
 }
 
+.imgViewer{
+display: inline-block;
+margin-bottom: 25px;
+}
 .headerText{
 background: url(../img/textura-black.png),repeat;
 background-position: 131px;
@@ -66,7 +73,7 @@ background-position-y: 263px;
    width: 100%;
    height: 245px;
    position: relative;
-   top:  30px;
+   
    background: #353535; /* Old browsers */
    background: -moz-linear-gradient(top,  #353535 1%, #131313 100%); /* FF3.6+ */
    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#353535), color-stop(100%,#131313)); /* Chrome,Safari4+ */
@@ -81,7 +88,7 @@ background-position: 131px;
 background-size: 30%;
 background-position-y: 263px;
 
-
+bottom:  0 ;
 }
 
 

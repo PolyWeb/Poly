@@ -3,7 +3,7 @@ $host = 'localhost';
 $user = 'root';
 $pass = '';
 
-$database = 'Poly';
+$database = 'poly';
 
 $conexion = mysql_connect($host, $user, $pass);// OR die("<p class='error'>Error de conexion</p>");
 //echo "Ya me conecté";

@@ -275,7 +275,7 @@
           <?php
 
 
-          $conexion =mysqli_connect("localhost","poly1","poly","Poly");
+          $conexion =mysqli_connect("localhost","root","","poly");
           mysqli_set_charset($conexion, "utf8");
           /*SELECT user.usuario
             FROM user
